@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'header.html'%}
+Welcome,{{request.session.user}}
+<br>
+<img src="{{request.session.image}}" width="100px" height="100px">
+
+<div align="right">
+    <a href="/logout">logout</a>
+</div>
+<div align="center">
+<table cellspacing="20px">
+    <tr>
+        <td> <a href="/checkbalance">Check Balance</a></td>
+    </tr>
+    <tr>
+        <td> <a href="/depositamt">Deposit Amount</a></td>
+    </tr>
+    <tr>
+        <td> <a href="/withdrawamt">Withdraw Amount</a></td>
+    </tr>
+    <tr>
+        <td> <a href="/updatepass">Update Password</a></td>
+    </tr>
+</table>
+</div>
+</body>
+</html>

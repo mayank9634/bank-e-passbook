@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'header.html'%}
+Welcome,{{request.session.user}}
+<a href="/auth">Back</a>
+<div align="right">
+    <a href="/logout">logout</a>
+</div>
+<div align="center">
+    <form method="post" action="/withdrawamt/">
+        {% csrf_token%}
+<table cellspacing="20px">
+   <tr>
+       <td>Amount:</td>
+       <td><input type="number" name="amt" required></td>
+   </tr>
+
+    <tr>
+       <td><input type="submit" value="Withdraw"></td>
+       <td><input type="reset" value="Reset"></td>
+   </tr>
+
+</table>
+    </form>
+    {{msg}}
+</div>
+
+</body>
+</html>

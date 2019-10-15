@@ -1,0 +1,21 @@
+<html>
+<head>
+<script type="text/javaScript">
+function disableBackButton()
+{
+window.history.forward();
+}
+setTimeout("disableBackButton()", 0);
+</script>
+</head>
+<body onload="disableBackButton()">
+</body>
+</html>
+{% include 'header.html' %}
+{%load static%}
+<h1>Welcome {{request.session.user}}</h1>
+<img src="{{request.session.image}}" width="150" height="140" alt="Pic Not Uploaded"/>
+
+<div align="center">
+    <a href="/"><h1>Confirm logout</h1></a>
+</div>
